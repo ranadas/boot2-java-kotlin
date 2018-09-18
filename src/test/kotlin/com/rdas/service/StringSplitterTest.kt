@@ -1,5 +1,6 @@
 package com.rdas.service;
 
+import org.assertj.core.api.Assertions.assertThat
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.springframework.beans.factory.annotation.Autowired
@@ -11,10 +12,11 @@ import org.springframework.test.context.junit4.SpringRunner
 class StringSplitterTest {
 
     @Autowired
-    private lateinit var restTemplate: StringSplitter
+    private lateinit var springSplitter: StringSplitter
 
     @Test
-    fun `Assert content on blog page`() {
-
+    fun `Assert object injected page`() {
+        assertThat(springSplitter)
+                .isNotNull()
     }
 }
